@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/llSeller"
+    android:weightSum="10"
+    android:padding="10dp">
+
+    <View
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"/>
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="9"
+        android:gravity="end">
+
+        <TextView android:id="@+id/tvSellerDp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/seller_dp_bubble"
+            android:text=""
+            android:padding="10dp"/>
+
+        <LinearLayout android:id="@+id/llSellerChatContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_toLeftOf="@id/tvSellerDp"
+            android:layout_marginRight="10dp">
+
+            <include layout="@layout/seller_chat_text_row_item"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>
