@@ -95,9 +95,6 @@ public class MainActivity extends AppCompatActivity {
     private void addToList(String message, @Message.UserType int userType) {
         long currentTime =System.currentTimeMillis();
 
-        if(Util.isDifferenceMore(currentTime, mAdapter.getLastMessageTimeStamp(), 60000))
-            mAdapter.addMessageToList(new Message(Message.TYPE_TIME_SEPARATOR, null, currentTime));
-
         mAdapter.addMessageToList(new Message(userType, message, currentTime));
 
         rlChat.smoothScrollToPosition(mAdapter.getItemCount() - 1);

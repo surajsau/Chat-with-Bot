@@ -26,7 +26,8 @@
             android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_weight="8"
-            android:background="@null" />
+            android:background="@null"
+            android:padding="5dp"/>
 
         <Button android:id="@+id/btnSend"
             android:layout_width="0dp"

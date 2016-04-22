@@ -30,7 +30,7 @@ public class ChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     public ChatAdapter(Context context, String buyerDp, String sellerDp) {
         mContext = context;
 
-        lastMessage = new Message(Message.TYPE_TIME_SEPARATOR, null, 0);
+        lastMessage = new Message(Message.TYPE_NONE, null, 0);
 
         messages = new ArrayList<>();
 
@@ -50,11 +50,6 @@ public class ChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
                 View sellerView = LayoutInflater.from(mContext).inflate(R.layout.seller_chat_row_item, parent, false);
                 return new ChatSellerViewHolder(sellerView);
             }
-
-            case Message.TYPE_TIME_SEPARATOR: {
-                View timeSeparatorView = LayoutInflater.from(mContext).inflate(R.layout.time_seperator_row_item, parent, false);
-                return new ChatTimeSeparatorViewHolder(timeSeparatorView);
-            }
         }
 
         return null;
@@ -72,9 +67,6 @@ public class ChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
             vh.tvSellerDp.setText(mSellerDp);
             vh.tvSellerMessage.setText(messages.get(position).getMessage());
             vh.tvSellerTimeStamp.setText(Util.getCurrentTimeString(messages.get(position).getTimeStamp()));
-        } else if(holder instanceof ChatTimeSeparatorViewHolder) {
-            ChatTimeSeparatorViewHolder vh = (ChatTimeSeparatorViewHolder) holder;
-            vh.tvTimeIndicator.setText(Util.getCurrentTimeString(messages.get(position).getTimeStamp()));
         }
     }
 
